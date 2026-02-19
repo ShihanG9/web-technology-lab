@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table with Images and Lists</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #008cff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        img {
+            width: 140px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Table Containing Images and Lists</h2>
+
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Details (List)</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="laptop.png" alt="Laptop">
+            </td>
+            <td>
+                <ul>
+                    <li>Laptop</li>
+                    <li>Intel i5</li>
+                    <li>8 GB RAM</li>
+                    <li>512 GB SSD</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="mobile.png" alt="Mobile">
+            </td>
+            <td>
+                <ul>
+                    <li>Smartphone</li>
+                    <li>6 GB RAM</li>
+                    <li>128 GB Storage</li>
+                    <li>5000 mAh Battery</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="headphones.png" alt="Headphones">
+            </td>
+            <td>
+                <ul>
+                    <li>Wireless Headphones</li>
+                    <li>Bluetooth 5.0</li>
+                    <li>Noise Cancellation</li>
+                    <li>20 hrs Backup</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
