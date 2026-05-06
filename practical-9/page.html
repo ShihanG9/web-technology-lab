@@ -1,0 +1,166 @@
+```html id="7json91"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Object Example</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+        }
+
+        .container{
+            width: 420px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        .input-group{
+            margin-bottom: 18px;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus{
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(255,255,255,0.7);
+        }
+
+        button{
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: white;
+            color: #185a9d;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            transform: scale(1.05);
+            background: #f1f1f1;
+        }
+
+        #output{
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.2);
+            font-size: 16px;
+            white-space: pre-wrap;
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📦 JSON Generator</h1>
+
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+            <label>Age</label>
+            <input type="number" id="age" placeholder="Enter your age">
+        </div>
+
+        <button onclick="createJSON()">
+            Generate JSON
+        </button>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        function createJSON(){
+
+            let name =
+            document.getElementById("name").value;
+
+            let email =
+            document.getElementById("email").value;
+
+            let age =
+            document.getElementById("age").value;
+
+            // Creating JSON Object
+            let userData = {
+
+                name: name,
+                email: email,
+                age: age
+            };
+
+            // Convert object to JSON string
+            let jsonData =
+            JSON.stringify(userData, null, 4);
+
+            let output =
+            document.getElementById("output");
+
+            output.style.display = "block";
+
+            output.innerHTML =
+            "✅ JSON Object Created:<br><br>" +
+            jsonData;
+        }
+
+    </script>
+
+</body>
+</html>
+```

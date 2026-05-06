@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date, Math and String Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Object Functions Demo</h1>
+
+    <div class="box" id="dateBox"></div>
+
+    <div class="box" id="mathBox"></div>
+
+    <div class="box" id="stringBox"></div>
+
+    <script>
+
+        // DATE OBJECT FUNCTIONS
+        let today = new Date();
+
+        document.getElementById("dateBox").innerHTML =
+            "<h2>Date Object</h2>" +
+            "Current Date: " + today + "<br>" +
+            "Year: " + today.getFullYear() + "<br>" +
+            "Month: " + (today.getMonth() + 1) + "<br>" +
+            "Day: " + today.getDate();
+
+        // MATH OBJECT FUNCTIONS
+        let number = 25.7;
+
+        document.getElementById("mathBox").innerHTML =
+            "<h2>Math Object</h2>" +
+            "Square Root of 25: " + Math.sqrt(25) + "<br>" +
+            "Rounded Value of 25.7: " + Math.round(number) + "<br>" +
+            "Random Number: " + Math.random() + "<br>" +
+            "Power 2^3: " + Math.pow(2, 3);
+
+        // STRING OBJECT FUNCTIONS
+        let text = "Frontend Programming";
+
+        document.getElementById("stringBox").innerHTML =
+            "<h2>String Object</h2>" +
+            "Original String: " + text + "<br>" +
+            "Length: " + text.length + "<br>" +
+            "Uppercase: " + text.toUpperCase() + "<br>" +
+            "Lowercase: " + text.toLowerCase() + "<br>" +
+            "Substring (0-8): " + text.substring(0, 8);
+
+    </script>
+
+</body>
+</html>

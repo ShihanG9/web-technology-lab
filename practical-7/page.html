@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: white;
+            width: 60%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: navy;
+        }
+
+        #box {
+            width: 250px;
+            height: 120px;
+            background-color: lightblue;
+            margin: 30px auto;
+            line-height: 120px;
+            font-size: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JavaScript Event Handling</h1>
+
+        <!-- onclick event -->
+        <button onclick="showMessage()">
+            Click Me
+        </button>
+
+        <!-- onmouseover and onmouseout events -->
+        <div id="box"
+             onmouseover="mouseOver()"
+             onmouseout="mouseOut()">
+
+            Hover Over Me
+
+        </div>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+
+        // onclick event function
+        function showMessage() {
+            document.getElementById("message").innerHTML =
+                "Button Clicked!";
+        }
+
+        // onmouseover event function
+        function mouseOver() {
+
+            let box = document.getElementById("box");
+
+            box.style.backgroundColor = "orange";
+            box.innerHTML = "Mouse is Over!";
+        }
+
+        // onmouseout event function
+        function mouseOut() {
+
+            let box = document.getElementById("box");
+
+            box.style.backgroundColor = "lightblue";
+            box.innerHTML = "Hover Over Me";
+        }
+
+    </script>
+
+</body>
+</html>

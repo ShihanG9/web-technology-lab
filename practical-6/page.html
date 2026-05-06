@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Dialog Boxes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            width: 60%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: darkblue;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: navy;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JavaScript Dialog Boxes Demo</h1>
+
+        <button onclick="showAlert()">
+            Show Alert Box
+        </button>
+
+        <button onclick="showConfirm()">
+            Show Confirm Box
+        </button>
+
+        <button onclick="showPrompt()">
+            Show Prompt Box
+        </button>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        // Alert Box
+        function showAlert() {
+            alert("Welcome to JavaScript Alert Box!");
+        }
+
+        // Confirm Box
+        function showConfirm() {
+
+            let result = confirm("Do you want to continue?");
+
+            if (result) {
+                document.getElementById("output").innerHTML =
+                    "You clicked OK.";
+            }
+            else {
+                document.getElementById("output").innerHTML =
+                    "You clicked Cancel.";
+            }
+        }
+
+        // Prompt Box
+        function showPrompt() {
+
+            let name = prompt("Enter your name:");
+
+            if (name != null && name != "") {
+
+                document.getElementById("output").innerHTML =
+                    "Hello, " + name + "!";
+            }
+            else {
+
+                document.getElementById("output").innerHTML =
+                    "No name entered.";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

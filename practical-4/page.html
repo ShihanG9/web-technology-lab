@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .container{
+            width: 400px;
+            padding: 35px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            color: white;
+        }
+
+        h1{
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        input{
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 12px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus{
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(255,255,255,0.7);
+        }
+
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button{
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            background: white;
+            color: #0077b6;
+        }
+
+        button:hover{
+            transform: scale(1.05);
+            background: #f1f1f1;
+        }
+
+        #result{
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.2);
+            font-size: 22px;
+            font-weight: bold;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🧮 Calculator</h1>
+
+        <input type="number" id="num1" placeholder="Enter First Number">
+
+        <input type="number" id="num2" placeholder="Enter Second Number">
+
+        <div class="buttons">
+
+            <button onclick="add()">➕ Add</button>
+
+            <button onclick="subtract()">➖ Subtract</button>
+
+            <button onclick="multiply()">✖ Multiply</button>
+
+            <button onclick="divide()">➗ Divide</button>
+
+        </div>
+
+        <div id="result">
+            Result will appear here
+        </div>
+
+    </div>
+
+    <script>
+
+        // Get Numbers
+        function getValues(){
+
+            let num1 =
+            parseFloat(document.getElementById("num1").value);
+
+            let num2 =
+            parseFloat(document.getElementById("num2").value);
+
+            return [num1, num2];
+        }
+
+        // Addition
+        function add(){
+
+            let [num1, num2] = getValues();
+
+            document.getElementById("result").innerHTML =
+            "✅ Addition = " + (num1 + num2);
+        }
+
+        // Subtraction
+        function subtract(){
+
+            let [num1, num2] = getValues();
+
+            document.getElementById("result").innerHTML =
+            "✅ Subtraction = " + (num1 - num2);
+        }
+
+        // Multiplication
+        function multiply(){
+
+            let [num1, num2] = getValues();
+
+            document.getElementById("result").innerHTML =
+            "✅ Multiplication = " + (num1 * num2);
+        }
+
+        // Division
+        function divide(){
+
+            let [num1, num2] = getValues();
+
+            if(num2 == 0){
+
+                document.getElementById("result").innerHTML =
+                "❌ Cannot divide by zero!";
+            }
+
+            else{
+
+                document.getElementById("result").innerHTML =
+                "✅ Division = " + (num1 / num2);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

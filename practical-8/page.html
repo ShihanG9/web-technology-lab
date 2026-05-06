@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Event Handling Demo</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            padding: 20px;
+        }
+
+        .container{
+            width: 90%;
+            max-width: 750px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            color: white;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1{
+            margin-bottom: 25px;
+            font-size: 34px;
+            letter-spacing: 1px;
+        }
+
+        .input-box{
+            margin: 20px 0;
+        }
+
+        input,
+        textarea{
+            width: 85%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus{
+            transform: scale(1.03);
+            box-shadow: 0 0 12px rgba(255,255,255,0.7);
+        }
+
+        textarea{
+            resize: none;
+        }
+
+        img{
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 4px solid rgba(255,255,255,0.5);
+            transition: 0.4s;
+        }
+
+        img:hover{
+            transform: scale(1.05);
+        }
+
+        audio{
+            margin-top: 25px;
+            width: 85%;
+            border-radius: 12px;
+        }
+
+        #output{
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.2);
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.4s;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #output:hover{
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.02);
+        }
+
+        .footer{
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+
+<body onresize="resizeFunction()">
+
+    <div class="container">
+
+        <h1>✨ JavaScript Event Handling ✨</h1>
+
+        <!-- onsearch -->
+        <div class="input-box">
+            <input type="search"
+                   id="searchBox"
+                   placeholder="Search something..."
+                   onsearch="searchFunction()">
+        </div>
+
+        <!-- onselect -->
+        <div class="input-box">
+            <textarea rows="4"
+                      onselect="selectFunction()">Select any text inside this textarea.</textarea>
+        </div>
+
+        <!-- onabort -->
+        <img src="wrongimage.jpg"
+             alt="Demo Image"
+             onabort="abortFunction()">
+
+        <!-- onvolumechange -->
+        <audio controls onvolumechange="volumeFunction()">
+            <source src="sample.mp3" type="audio/mp3">
+            Your browser does not support audio.
+        </audio>
+
+        <!-- Output -->
+        <div id="output">
+            Event messages will appear here...
+        </div>
+
+        <div class="footer">
+            Resize window, search text, select text, or change audio volume 🎵
+        </div>
+
+    </div>
+
+    <script>
+
+        // onresize event
+        function resizeFunction(){
+
+            document.getElementById("output").innerHTML =
+            "📏 Window resized successfully!";
+        }
+
+        // onsearch event
+        function searchFunction(){
+
+            let text =
+            document.getElementById("searchBox").value;
+
+            document.getElementById("output").innerHTML =
+            "🔍 You searched for: " + text;
+        }
+
+        // onselect event
+        function selectFunction(){
+
+            document.getElementById("output").innerHTML =
+            "✂️ Text selected!";
+        }
+
+        // onabort event
+        function abortFunction(){
+
+            document.getElementById("output").innerHTML =
+            "⚠️ Image loading aborted!";
+        }
+
+        // onvolumechange event
+        function volumeFunction(){
+
+            document.getElementById("output").innerHTML =
+            "🎵 Audio volume changed!";
+        }
+
+    </script>
+
+</body>
+</html>
